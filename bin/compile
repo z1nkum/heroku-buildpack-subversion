@@ -31,7 +31,7 @@ else
 
 	echo "-----> Downloading Subversion Dependencies"
 	./get-deps.sh apr | indent
-	./get-deps.sh serf | indent
+	# ./get-deps.sh serf | indent
 
 	echo "-----> Building APR"
 	cd apr
