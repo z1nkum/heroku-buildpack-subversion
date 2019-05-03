@@ -58,14 +58,14 @@ else
 	make install | indent
 	cd ../../..
 
-	echo "-----> Building Serf"
-	cd serf
-	mkdir install
-	./buildconf | indent
-	./configure --prefix=`pwd`/install --with-apr=`pwd`/../apr/install --with-apr-util=`pwd`/../apr-util/install | indent
-	make | indent
-	make install | indent
-	cd ..
+#	echo "-----> Building Serf"
+#	cd serf
+#	mkdir install
+#	./buildconf | indent
+#	./configure --prefix=`pwd`/install --with-apr=`pwd`/../apr/install --with-apr-util=`pwd`/../apr-util/install | indent
+#	make | indent
+#	make install | indent
+#	cd ..
 
 	echo "-----> Building Subversion"
 	./autogen.sh | indent
@@ -79,7 +79,8 @@ else
 		--with-sqlite=`pwd`/sqlite-amalgamation/sqlite3.c \
 		--with-apr=`pwd`/apr/install \
 		--with-apr-util=`pwd`/apr-util/install \
-		--with-serf=`pwd`/serf/install \
+		# --with-serf=`pwd`/serf/install \
+		--without-serf \
 		--without-apxs \
 		--without-berkeley-db \
 		--without-ctypesgen \
